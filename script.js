@@ -32,3 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+function openModal(imageSrc, title, description) {
+    document.getElementById("modalImage").src = imageSrc;
+    document.getElementById("modalTitle").textContent = title;
+    document.getElementById("modalDescription").textContent = description;
+    document.getElementById("imageModal").style.display = "flex";
+}
+
+function closeModal() {
+    document.getElementById("imageModal").style.display = "none";
+}
