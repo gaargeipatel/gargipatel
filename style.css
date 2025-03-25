@@ -28,6 +28,11 @@ body {
 .navbar ul li {
     position: relative;
 }
+.right-nav{
+    list-style-type: none;
+    padding: 10px;
+    margin: 20px;
+}
 
 .nav-link {
     text-decoration: none;
@@ -46,7 +51,7 @@ body {
     bottom: -5px;
     width: 0;
     height: 3px;
-    background: #f39c12;
+    background: #6A9C89;
     transition: all 0.4s ease-in-out;
     transform: translateX(-50%);
 }
@@ -57,7 +62,7 @@ body {
 }
 
 .nav-link:hover {
-    color: #f39c12;
+    color: #6A9C89;
 }
 
 /* Hero Section */
@@ -65,11 +70,14 @@ body {
     padding: 100px 20px;
     margin-top: 60px;
 }
+.fade-in{
+    font-weight: lighter;
+}
 
 /* Styling for highlighted name */
 .highlight {
     font-weight: bold;
-    color: #f39c12;
+    color: #4c4c4c;
 }
 
 h1 {
@@ -91,7 +99,8 @@ p {
     justify-content: center;
     text-align: center;
     gap: 10px; /* Space between text and video */
-    padding: 50px;
+    padding: 20px;
+    color: #4c4c4c;
 }
 
 /* Styling for Hero Text */
@@ -104,11 +113,14 @@ p {
     font-weight: 400;
 }
 
-.hero-content .highlight {
+.hero-content .highlight:hover {
     font-weight: bold;
     color: #6A9C89; /* Yellow color for 'Gargi' */
 }
 
+.hero-content .highlight {
+    font-weight: lighter; 
+}
 /* Styling for Hero Video */
 .hero-video video {
     max-width: 250px; /* Adjust size */
@@ -131,7 +143,7 @@ p {
 
 /* Work Section */
 .work {
-    padding: 50px 20px;
+    padding: 10px 10px;
 }
 
 .project {
@@ -140,8 +152,21 @@ p {
     transition: transform 0.3s ease-in-out;
 }
 
+.project a {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps default text color */
+}
+
+.project:hover p {
+    color: #6A9C89; /* Changes text color when hovering */
+    text-transform: capitalize;
+    text-size-adjust: 40px;
+}
+
 .project:hover {
     transform: scale(1.05);
+    color: #6A9C89;
+    text-decoration: none;
 }
 
 .project img {
@@ -162,7 +187,7 @@ p {
 
 /* Contact Section */
 .contact {
-    padding: 50px 20px;
+    padding: 20px 20px;
 }
 
 /* Buttons */
@@ -170,7 +195,7 @@ p {
     display: inline-block;
     margin-top: 20px;
     padding: 10px 20px;
-    background: black;
+    background: #4c4c4c;
     color: white;
     text-decoration: none;
     border-radius: 5px;
@@ -178,18 +203,143 @@ p {
 }
 
 .btn:hover {
-    background: gray;
+    background: #6A9C89;
 }
 
 .about h2,
 .work h2,
 .contact h2 {
     font-size: 36px; /* Adjust as needed */
-    font-weight: bold;
+    font-weight:lighter;
     text-transform: uppercase; /* Optional: Makes text uppercase */
     text-align: center; /* Centers the text */
     margin-bottom: 20px; /* Adds spacing below */
-    color: #333;
+    color: #6A9C89;
+}
+.about-me h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+    font-style: italic;
+    font-weight: lighter;
+    color:#6A9C89;
+}
+/* Container for the scrolling images */
+.marquee-container {
+    width: 100%;
+    overflow-x: auto; /* Enables smooth scrolling */
+    background: #ffffff;
+    padding: 10px 0;
+    position: relative;
+    display: flex;
+    scroll-behavior: smooth; /* Smooth manual scrolling */
+}
+
+/* Images aligned in a row */
+.marquee {
+    display: flex; /* Ensures a single line layout */
+    gap: 30px; /* Adjust this between 20px - 30px as needed */
+    width: max-content;
+    animation: scroll 60s linear infinite;
+    padding-left: 50px; /* Adds space before first image */
+}
+
+/* Prevent first image from being cropped */
+.image-item:first-child {
+    margin-left: 50px; /* Extra left margin for the first item */
+}
+
+
+/* Pause animation on hover */
+.marquee-container:hover .marquee {
+    animation-play-state: paused;
+}
+
+/* Enable scrolling with mouse wheel (horizontal scroll on shift + scroll) */
+.marquee-container::-webkit-scrollbar {
+    height: 8px;
+}
+.marquee-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+.marquee-container:hover {
+    cursor: grab; /* Changes cursor to indicate scroll */
+}
+
+
+.image-item {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+
+
+/* Image styling */
+.image-item img {
+    width: 350px; /* Adjust size as needed */
+    height: 320px;
+    border-radius: 10px;
+}
+
+.image-item:hover img {
+    transform: scale(1.1);
+}
+
+.image-item:hover h4{
+    color: #6A9C89;
+    font-size: 18px;
+}
+
+.image-item h3{
+    font-weight: lighter;
+    font-size: 18px;
+}
+
+.image-item:hover h3{
+    color: #6A9C89;
+    font-size: 18px;
+}
+/* Keyframe animation to move images horizontally */
+@keyframes scroll {
+    from {
+        transform: translateX(5%);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.modal img {
+    width: 80%;
+    height: auto;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
 }
 
 /* Animations */
@@ -202,5 +352,4 @@ p {
     from { opacity: 0; transform: translateY(50px); }
     to { opacity: 1; transform: translateY(0); }
 }
-
 
