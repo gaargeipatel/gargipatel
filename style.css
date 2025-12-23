@@ -181,7 +181,7 @@ body.dark .sticky-note .note-content {
 
 /* Dark mode */
 body.dark .sticky-note h3 {
-    opacity: 1 !important;
+    opacity: 50 !important;
     color: #2563eb !important; /* blue-600 */
 }
 
