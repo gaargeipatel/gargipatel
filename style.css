@@ -168,3 +168,20 @@ body.dark .sticky-note .note-content {
     box-shadow: inset 0 1px 2px rgba(0,0,0,0.2);
     z-index: 10;
 }
+
+/* ============================= */
+/* FORCE VISIBILITY FOR CARD HEADINGS */
+/* ============================= */
+
+.sticky-note h3 {
+    opacity: 1 !important;
+    color: #0f172a !important; /* dark slate */
+    font-weight: 600;
+}
+
+/* Dark mode */
+body.dark .sticky-note h3 {
+    opacity: 1 !important;
+    color: #2563eb !important; /* blue-600 */
+}
+
